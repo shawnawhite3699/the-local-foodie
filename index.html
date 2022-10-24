@@ -11,7 +11,21 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-    <!-- TODO: LINK TAILWIND SOURCE -->
+
+    <!-- TAILWIND SOURCE -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- OPTIONAL, CUSTOMIZE CONFIG WITH OWN DESIGN -->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/style.css"/>
@@ -20,6 +34,8 @@
 </head>
 
 <body>
+    <!-- TAILWIND TEST -->
+    <h1 class="text-3xl font-bold underline text-clifford"> Hello world!</h1>
     <header>
         <h1>The Local Foodie</h1>
     </header>
