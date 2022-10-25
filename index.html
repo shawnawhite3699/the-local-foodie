@@ -11,58 +11,41 @@
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/dist/output.css">
-    
-    <!-- OPTIONAL, CUSTOMIZE CONFIG WITH OWN DESIGN -->
-    <script>
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                clifford: '#da373d',
-              }
-            }
-          }
-        }
-      </script>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css"/>
     <!-- BROWSER TAB TITLE -->
     <title>The Local Foodie</title>
 </head>
 
 <body>
-    <!-- TAILWIND TEST -->
-    <h1 class="text-3xl font-bold underline text-clifford"> Hello world!</h1>
     <header>
         <h1>The Local Foodie</h1>
     </header>
  
     <main>
-        <section class="mt-8 grid grid-cols-3"> <!-- WANT TO DO COLUMNS FOR EACH CHEF (3), CLICKABLE IMAGE LINK TO SEPARATE HTML FILES -->
-            <a href="./franklin.html">
-                <img class="item" src="./assets/images/franklin.png" alt="Photo of Aaron Franklin">
-            </a>
-            <div class="image-text"> <!-- NAME DISPLAY OVER IMAGE -->
-                <span>Aaron Franklin</span>
+        <section class="mt-8 grid lg:grid-cols-3 gap-10">
+            <div class="card">
+                <a href="./franklin.html">
+                    <img class="item" src="./assets/images/franklin.png" alt="Photo of Aaron Franklin">
+                </a>
+                <div class="image-text">
+                    <span>Aaron Franklin</span>
             </div>
-        </section>
 
-        <section class="container columns-4">
-            <a href="./qui.html">
-                <img class="item" src="./assets/images/qui.png" alt="Photo of Paul Qui">
-            </a>
-            <div class="image-text"> <!-- NAME DISPLAY OVER IMAGE -->
-                <span>Paul Qui</span>
+            <div class="card">
+                <a href="./qui.html">
+                    <img class="item" src="./assets/images/qui.png" alt="Photo of Paul Qui">
+                </a>
+                <div class="image-text">
+                    <span>Paul Qui</span>
+                </div>
             </div>
-        </section>
 
-        <section class="container columns-4">
-            <a href="./bourdain.html">
-                <img class="item" src="./assets/images/bourdain.png" alt="Photo of Anthony Bourdain">
-            </a>
-            <div class="image-text"> <!-- NAME DISPLAY OVER IMAGE -->
-                <span>Anthony Bourdain</span>
+            <div class="card">
+                <a href="./bourdain.html">
+                    <img class="item" src="./assets/images/bourdain.png" alt="Photo of Anthony Bourdain">
+                </a>
+                <div class="image-text">
+                    <span>Anthony Bourdain</span>
+                </div>
             </div>
         </section>
 
@@ -72,7 +55,7 @@
 </footer>
 
     <!-- SCRIPT TAILWIND -->
-    <script src="./assets/js/tailwind.config.js"></script>
+    <!-- <script src="tailwind.config.js"></script> -->
     <!-- JAVASCRIPT -->
     <script src="./assets/js/script.js"></script>
 
