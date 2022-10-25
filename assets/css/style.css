@@ -1,0 +1,30 @@
+.flex-item-container {
+    position: relative;
+  }
+  
+.item {
+    display: flex;
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #474747;
+    opacity: 0.6;
+    transition: 0.3s;
+  
+  }
+  
+  .item:hover {
+    opacity: 1;
+  }
+
+  .image-text {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #474747;
+    color: #ffffff;
+    font-size: 14px;
+    padding-left: 5px;
+    padding-right: 20px;
+  }
