@@ -25,13 +25,17 @@ You and your group will use everything you’ve learned over the past six module
 * Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
 ## User Story
+
+```
 AS a foodie
 I WANT to see restaurants celebrity chefs have recommended in the Austin area
 SO THAT I can see their reviews, visit the restaurant, and leave my own reviews
-
+```
 ## Acceptance Criteria
-GIVEN I am a user
 
+```
+GIVEN A restaurant 
+```
 ## Screenshot
 
 ## Tech Used
@@ -50,3 +54,4 @@ GIVEN I am a user
 * Nima Moeini
 
 ## Deployed Application
+[Launch The Local Foodie](https://www.gotcha.io/).
