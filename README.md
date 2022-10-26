@@ -34,11 +34,7 @@ SO THAT I can see their reviews, visit the restaurant, and leave my own reviews
 ## Acceptance Criteria
 
 ```
-<<<<<<< HEAD
 GIVEN a restaurant 
-=======
-GIVEN A restaurant 
->>>>>>> 6e1a1fc (Update README.md)
 ```
 ## Screenshot
 
@@ -58,4 +54,4 @@ GIVEN A restaurant
 * Nima Moeini
 
 ## Deployed Application
-[Launch The Local Foodie](https://www.gotcha.io/).
+[Launch The Local Foodie]
