@@ -46,12 +46,12 @@ GIVEN a restaurant
 * Googles Maps API
 
 ## Contributors
-* Shawna White
-* Jennifer Blacutt
-* James Carter
-* Ye Kuang
-* Jeremy Koshy
-* Nima Moeini
+* [Shawna White](https://github.com/shawnawhite3699)
+* [Jennifer Blacutt](https://github.com/itsjennyb)
+* [James Carter](https://github.com/carterjamesmike)
+* [Ye Kuang](https://github.com/ykuang321)
+* [Jeremy Koshy](https://github.com/jbkoshy)
+* [Nima Moeini](
 
 ## Deployed Application
 [Launch The Local Foodie]
