@@ -32,7 +32,6 @@ I WANT to see restaurants celebrity chefs have recommended in the Austin area
 SO THAT I can see their reviews, visit the restaurant, and leave my own reviews
 ```
 ## Acceptance Criteria
-GIVEN I am a user
 
 ```
 GIVEN a restaurant 
@@ -55,4 +54,4 @@ GIVEN a restaurant
 * Nima Moeini
 
 ## Deployed Application
-[Launch The Local Foodie]
+[Launch The Local Foodie](https://www.gotcha.io/).
