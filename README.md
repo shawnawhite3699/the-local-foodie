@@ -54,4 +54,4 @@ GIVEN a restaurant
 * Nima Moeini
 
 ## Deployed Application
-[Launch The Local Foodie](https://www.gotcha.io/).
+[Launch The Local Foodie]
