@@ -34,14 +34,14 @@ GIVEN I am a user
 
 ## Screenshot
 
-##Tech Used
+## Tech Used
 * HTML
 * CSS
 * Javascript
 *
 *
 
-##Contributors
+## Contributors
 * Shawna White
 * Jennifer Blacutt
 * James Carter
