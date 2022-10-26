@@ -34,7 +34,7 @@ SO THAT I can see their reviews, visit the restaurant, and leave my own reviews
 ## Acceptance Criteria
 
 ```
-GIVEN A restaurant 
+GIVEN a restaurant 
 ```
 ## Screenshot
 
@@ -54,4 +54,4 @@ GIVEN A restaurant
 * Nima Moeini
 
 ## Deployed Application
-[Launch The Local Foodie](https://www.gotcha.io/).
+[Launch The Local Foodie]
