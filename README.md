@@ -39,14 +39,14 @@ GIVEN a restaurant
 ```
 ## Screenshot
 
-##Tech Used
+## Tech Used
 * HTML
 * CSS
 * Javascript
 * Google Places API
 * Googles Maps API
 
-##Contributors
+## Contributors
 * Shawna White
 * Jennifer Blacutt
 * James Carter
