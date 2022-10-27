@@ -13,32 +13,44 @@
     <!-- LINK TAILWIND SOURCE -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- CSS -->
+    <link href="http://fonts.cdnfonts.com/css/snell-roundhand" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <!-- BROWSER TAB TITLE -->
     <title>Bourdain Austin Recs</title>
 </head>
 
 <body>
-    <!-- 3 COLUMNS / IMAGE / LIST OF RECS / DISPLAY APIS -->
+    <header>
+        <h1 class="bg-black text-white pb-0 pt-6 text-7xl text-center">
+            The Local Foodie
+        </h1>
+        <h2 class="bg-black text-white pb-8 pt-6 text-4xl text-center">Find Austin's Best Celebrity Chef-Endorsed Restaurants</h2>
+      </header>
+      <!-- 3 COLUMNS / IMAGE / LIST OF RECS / DISPLAY APIS -->
     <section>
 
     </section>
 
-    <section>
+    <section class="grid grid-cols-3 col-span-1 px-4">
         <ul>
-            <li>barley swine</li>
-            <li>franklin bbq</li>
-            <li>el taco rico</li>
-            <li>draught house pub & brewery</li>
-            <li>el azteca restaurant</li>
-            <li>JMueller bbq</li>
-            <li>lala's</li>
-            <li>la mexicana bakery</li>
-            <li>texas chili parlor</li>
-
+            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded">
+            Barley Swine
+            </button></li>
+            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded">Franklin BBQ</button></li>
+            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded">El Taco Rico</button></li>
+            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded">Draught House Pub & Brewery</button></li>
+            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded">El Azteca Restaurant</button></li>
+            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded">JMueller BBQ</button></li>
+            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded">Lala's</button></li>
+            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded">La Mexicana Bakery</button></li>
+            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded">Texas Chili Parlor</button></li>
         </ul>
     </section>
-    <section>
-        
+        <!--Div for the map marker-->
+        <div id="map" class="grid grid-cols-3 col-span-2"></div>
     </section>
+    <footer>
+        <p class="bg-black text-white pt-8 pb-8 text-l font-bold text-center">The Connoisseurs © 2022 Copyright</p>
+    </footer>
 </body>
+</html>
