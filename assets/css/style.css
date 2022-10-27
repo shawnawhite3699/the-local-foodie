@@ -1,32 +1,39 @@
-.flex-item-container {
-    position: relative;
-  }
-  
-.item {
-    display: flex;
-    width: 200px;
-    height: 300px;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #474747;
-    opacity: 0.6;
-    transition: 0.3s;
-  }
-  
-  .item:hover {
-    opacity: 1;
-  }
+button {
+  width: 250px;
+  height: 40px;
+  font-size: 18px;
+}
 
-  .image-text {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: #474747;
-    color: #ffffff;
-    font-size: 14px;
-    padding-left: 5px;
-    padding-right: 20px;
-  }
+.profile {
+  margin: 5px;
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+}
+
+.flex-container { /* may need direction/wrap for overlap on small screen */
+  border: 1px solid red;
+  margin: 5px;
+}
+
+.btn-container {
+  border: 1px solid #000;
+  width: 20%;
+}
+
+.api-container {
+  border: 1px solid blue;
+  width: 80%;
+}
+
+.rounded {
+  margin: 5px;
+}
+.rounded-lg {
+  border: 1px solid black;
+  margin: 5px;
+  width: 100%;
+}
 
   /*Size of map*/
 #map {
