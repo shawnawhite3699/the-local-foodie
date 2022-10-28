@@ -1,8 +1,8 @@
 //'rests' is a placeholder. Will need restaurants in a specific div with id
 var rests = document.getElementById('rests');
-console.log(rests);
+//console.log(rests);
 
-function initMap() {
+function initMap(userLat, userLon) {
     // Lat and lon of restaurant pulled from getGeocode fx
     const local = { lat: userLat, lng: userLon};
     // Centers map on restaurant
@@ -21,8 +21,8 @@ window.initMap = initMap;
 
 function getGeocode (btnAttribute) {
   //Line below will be used once buttons are coded in. Line two below is a placeholder for design layout
-  //var geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${btnAttribute}&key=AIzaSyDVM4nCzUY3gFGHGXhyDnzXz8ZZbcT0e1w`;
-  var geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=862487R6%2BGM&key=AIzaSyDVM4nCzUY3gFGHGXhyDnzXz8ZZbcT0e1w`;
+  var geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${btnAttribute}&key=AIzaSyDVM4nCzUY3gFGHGXhyDnzXz8ZZbcT0e1w`;
+  //var geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=862487R6%2BGM&key=AIzaSyDVM4nCzUY3gFGHGXhyDnzXz8ZZbcT0e1w`;
 
 
   fetch(geocodeUrl)
@@ -30,7 +30,7 @@ function getGeocode (btnAttribute) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      //console.log(data);
       // console.log(data.results[0].geometry.location.lat);
       // console.log(data.results[0].geometry.location.lng);
       userLat = data.results[0].geometry.location.lat;
@@ -46,7 +46,10 @@ rests.addEventListener('click', function(event) {
 
   if (element.matches('button') === true) {
     var btnAttribute = element.getAttribute('id');
+    var dataIndex = element.getAttribute('data-index')
     getGeocode(btnAttribute);
+    console.log("Horray!")
+    displayData(dataIndex)
   }
 })
 
