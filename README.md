@@ -42,8 +42,8 @@ GIVEN a restaurant
 * HTML
 * CSS
 * Javascript
-*
-*
+* Google Places API
+* Googles Maps API
 
 ## Contributors
 * [Shawna White](https://github.com/shawnawhite3699)
