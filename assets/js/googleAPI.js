@@ -46,10 +46,10 @@ rests.addEventListener('click', function(event) {
 
   if (element.matches('button') === true) {
     var btnAttribute = element.getAttribute('id');
-    var dataIndex = element.getAttribute('data-index')
+    //var dataIndex = element.getAttribute('data-index')
     getGeocode(btnAttribute);
-    console.log("Horray!")
-    displayData(dataIndex)
+    //console.log("Horray!")
+    //displayData(dataIndex)
   }
 })
 
