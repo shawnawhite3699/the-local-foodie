@@ -1,16 +1,25 @@
-button {
-  width: 250px;
-  height: 40px;
-  font-size: 18px;
+body {
+  background-color: #474747;
 }
+
+.web-container {
+  margin: 50px;
+  border: 1px solid #474747;
+  border-radius: 15px;
+  background-color: white;
+}
+
 h1 {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   font-family: "Snell Roundhand", sans-serif;
 }
 
-.flex-item-container {
-    position: relative;
-  }
-  
+.profile {
+  width: 250px;
+  height: 250px;
+}
+
 .item {
     display: flex;
     width: 200px;
@@ -27,12 +36,6 @@ h1 {
   }
 
   /* JB'S ADDITIONS */
-.profile {
-  margin: 5px;
-  width: 250px;
-  height: 250px;
-  border-radius: 5px;
-}
 
 .flex-container { /* may need direction/wrap for overlap on small screen */
   border: 1px solid red;
@@ -52,6 +55,7 @@ h1 {
 .rounded {
   margin: 5px;
 }
+
 .rounded-lg {
   border: 1px solid black;
   margin: 5px;
@@ -60,6 +64,7 @@ h1 {
 
   /*Size of map*/
 #map {
+  border-radius: 5px;
   height: 400px;
   /* The height is 400 pixels */
   width: 100%;

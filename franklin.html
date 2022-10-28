@@ -19,53 +19,66 @@
 </head>
 
 <body>
-    <!-- 3 COLUMNS / IMAGE / LIST OF RECS / DISPLAY APIS -->
-    <header>
-        <h1 class="bg-gray-300 pb-4 pt-8 m-3 text-3xl font-bold text-center underline">
-          The Local Foodie
-        </h1>
-        <h2 class="bg-gray-300 pb-8 pt-4 m-3 text-lg font-bold text-center">
-          Aaron Franklin's Food Recs
-        </h2>
-    </header>
+    <div  class="web-container">
+        <header>
+            <h1 class="bg-black text-white pb-0 pt-6 text-7xl text-center">
+                The Local Foodie
+            </h1>
+            <h2 class="bg-black text-white pb-8 pt-6 text-4xl text-center">Find Austin's Best Celebrity Chef-Endorsed Restaurants</h2>
+        </header>
+        <!-- 3 COLUMNS / IMAGE / LIST OF RECS / DISPLAY APIS -->
 
-    <div class="flex-container flex flex-col-2">
-        <div class="btn-container flex flex-col items-center mt-5">
-            <figure>
-                <img class="profile" src="./assets/images/placeholder1.png" alt="">
-                <figcaption>Aaron Franklin</figcaption>
-            </figure>
-            <button class="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Veracruz</button>
-            <button class="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Hightower</button>
-            <button class="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Launderette</button>
-            <button class="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Lenoir</button>
-            <button class="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Suerte</button>
-            <button class="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">El Dorado</button>
-            <button class="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Franklin BBQ</button>
-            <button class="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Loro</button>
-            <button class="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Uchi</button>
-            <button class="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Uchiko</button>
-        </div>
+        <main class="grid grid-cols-12 col-span-3 px-8">
+            <ul>
+                <li class="profile mt-4"><img class="rounded" src="./assets/images/placeholder1.png" alt=""></li>
+                <li><imgcaption>Aaron Franklin</imgcaption></li>
+                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded">
+                    Veracruz</button></li>
+                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded">
+                    Hightower</button></li>
+                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded">
+                    Launderette</button></li>
+                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded">
+                    Lenoir</button></li>
+                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded">
+                    Suerte</button></li>
+                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded">
+                    El Dorado</button></li>
+                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded">
+                    Franklin BBQ</button></li>
+                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded">
+                    Loro</button></li>
+                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded">
+                    Uchi</button></li>
+                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded">
+                    Uchiko</button></li>
+            </ul>
 
-        <div class="api-container flex flex-col mt-5">
-            <figure class="max-w-lg">
-                <figcaption></figcaption>
-                <img class="rounded-lg" src="./assets/images/res-info.png" alt="">
-            </figure>
+            <section class="col-start-4 col-end-6 mt-6 leading-loose">
+                <ul>
+                    <li>Name:</li>
+                    <li>Address:</li>
+                    <li>Price:</li>
+                    <li>Rating:</li>
+                    <li>Cuisine:</li>
+                    <li><img class="rounded" src="./assets/images/placeholder1.png" alt=""></li>
+                </ul>
+            </section>
 
-            <figure class="max-w-lg">
-                <figcaption></figcaption>
-                <img class="rounded-lg" src="./assets/images/res-review.png" alt="">
-            </figure>
+            <section class="col-start-7 col-end-13 py-2">
+                <!--Div for the map marker-->
+                <div id="map"></div>
+            </section>
 
-            <figure class="max-w-lg">
-                <figcaption></figcaption>
-                <img class="rounded-lg" src="./assets/images/res-map.png" alt="">
-            </figure>
-        </div>
+        </main>
+
+        <footer class="col-span-3">
+            <p class="bg-black text-white p-8 text-l font-bold text-center">The Connoisseurs © 2022 Copyright</p>
+        </footer>
     </div>
-
-    <section>
-
-    </section>
+    <!-- JAVASCRIPT -->
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/googleAPI.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVM4nCzUY3gFGHGXhyDnzXz8ZZbcT0e1w&callback=initMap"></script>
 </body>
+</html>
