@@ -3,7 +3,30 @@ button {
   height: 40px;
   font-size: 18px;
 }
+h1 {
+  font-family: "Snell Roundhand", sans-serif;
+}
 
+.flex-item-container {
+    position: relative;
+  }
+  
+.item {
+    display: flex;
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #474747;
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+  
+  .item:hover {
+    opacity: 1;
+  }
+
+  /* JB'S ADDITIONS */
 .profile {
   margin: 5px;
   width: 250px;
