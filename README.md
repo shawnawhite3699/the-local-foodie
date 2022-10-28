@@ -51,7 +51,7 @@ GIVEN a restaurant
 * [James Carter](https://github.com/carterjamesmike)
 * [Ye Kuang](https://github.com/ykuang321)
 * [Jeremy Koshy](https://github.com/jbkoshy)
-* Nima Moeini
+* [Nima Moeini](
 
 ## Deployed Application
 [Launch The Local Foodie]

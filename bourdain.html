@@ -21,38 +21,51 @@
 
 <body>
     <header>
-        <h1 class="bg-black text-white pb-0 pt-6 text-7xl text-center">
+        <h1 class="bg-black text-white pb-0 pt-6 text-6xl text-center">
             The Local Foodie
         </h1>
-        <h2 class="bg-black text-white pb-8 pt-6 text-4xl text-center">Find Austin's Best Celebrity Chef-Endorsed Restaurants</h2>
+        <h2 class="bg-black text-white pb-8 pt-6 text-3xl text-center">Find Austin's Best Celebrity Chef-Endorsed Restaurants</h2>
       </header>
+
       <!-- 3 COLUMNS / IMAGE / LIST OF RECS / DISPLAY APIS -->
-    <section>
 
-    </section>
-
-    <section class="grid grid-cols-3 col-span-1 px-4">
+        <main class="grid grid-cols-12 col-span-3 px-8">
+        <ul id="rests">
+            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="862487R6%2BGM">
         <ul>
             <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded">
             Barley Swine
             </button></li>
-            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded">Franklin BBQ</button></li>
-            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded">El Taco Rico</button></li>
-            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded">Draught House Pub & Brewery</button></li>
-            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded">El Azteca Restaurant</button></li>
-            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded">JMueller BBQ</button></li>
-            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded">Lala's</button></li>
-            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded">La Mexicana Bakery</button></li>
-            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded">Texas Chili Parlor</button></li>
+            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded" id="862477C9+2F">Franklin BBQ</button></li>
+            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded" id="862477C9+2F">El Taco Rico</button></li>
+            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded" id="862487R6%2BGM">Draught House Pub & Brewery</button></li>
+            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded" id="862487R6%2BGM">El Azteca Restaurant</button></li>
+            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded" id="862487R6%2BGM">JMueller BBQ</button></li>
+            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded" id="862487R6%2BGM">Lala's</button></li>
+            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded" id="862487R6%2BGM">La Mexicana Bakery</button></li>
+            <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded" id="862487R6%2BGM">Texas Chili Parlor</button></li>
+        </ul>
+    
+    <section class="col-start-4 col-end-8 mt-5 leading-loose font-bold">
+        <ul>
+            <li>Name:</li>
+            <li>Address:</li>
+            <li>Price:</li>
+            <li>Rating:</li>
+            <li>Cuisine:</li>
+            <li><img class="rounded-lg mt-6 max-h-96" src="./assets/images/placeholder.png" alt="Photo of Anthony Bourdain"></li>
         </ul>
     </section>
+    
+    <section class="col-start-8 col-end-13 py-2">
         <!--Div for the map marker-->
-        <div id="map" class="grid grid-cols-3 col-span-2"></div>
+        <div id="map"></div>
     </section>
-    <footer>
-        <p class="bg-black text-white pt-8 pb-8 text-l font-bold text-center">The Connoisseurs © 2022 Copyright</p>
+    </main>
+    
+    <footer class="col-span-3">
+        <p class="bg-black text-white p-8 text-l font-bold text-center">The Connoisseurs © 2022 Copyright</p>
     </footer>
-
     <!-- JAVASCRIPT -->
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/googleAPI.js"></script>
