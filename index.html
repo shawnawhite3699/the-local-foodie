@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <!-- META -->
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -10,60 +10,64 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/dist/output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- BROWSER TAB TITLE -->
     <title>The Local Foodie</title>
 </head>
 
 <body>
-    <!-- TAILWIND TEST -->
-    <h1 class="text-3xl font-bold underline text-clifford"> Hello world!</h1>
-    <header class="justify-center">
-        <h1>The Local Foodie</h1>
-    </header>
+  <header>
+    <h1 class="bg-gray-300 pb-4 pt-8 m-3 text-3xl font-bold text-center underline">
+      The Local Foodie
+    </h1>
+    <h2 class="bg-gray-300 pb-8 pt-4 m-3 text-lg font-bold text-center">
+      Find Austin's Best Celebrity Chef-Endorsed Restaurants
+    </h2>
+  </header>
  
-    <main>
-        <section class="mt-8 grid lg:grid-cols-3 gap-10">
-            <div class="card">
-                <a href="./franklin.html">
-                    <img class="item" src="./assets/images/franklin.png" alt="Photo of Aaron Franklin">
-                </a>
-                <div class="image-text">
-                    <span>Aaron Franklin</span>
-            </div>
+  <div class="grid lg:grid-cols-3 gap-4">
+    <div class="flex justify-center">
+      <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+        <a href="./franklin.html">
+          <img class="rounded-lg" src="./assets/images/placeholder.png" alt="Photo of Aaron Franklin">
+        </a>
+        <figcaption class="absolute w-full text-center bottom-6 px-4 text-lg text-white">
+            <p>Aaron Franklin</p>
+        </figcaption>
+      </figure>
+    </div>
 
-            <div class="card">
-                <a href="./qui.html">
-                    <img class="item" src="./assets/images/qui.png" alt="Photo of Paul Qui">
-                </a>
-                <div class="image-text">
-                    <span>Paul Qui</span>
-                </div>
-            </div>
+    <div class="flex justify-center">
+      <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+        <a href="./bourdain.html">
+          <img class="rounded-lg" src="./assets/images/placeholder.png" alt="Photo of Anthony Bourdain">
+        </a>
+        <figcaption class="absolute w-full text-center bottom-6 px-4 text-lg text-white">
+            <p>Anthony Bourdain</p>
+        </figcaption>
+      </figure>
+    </div>
 
-            <div class="card">
-                <a href="./bourdain.html">
-                    <img class="item" src="./assets/images/bourdain.png" alt="Photo of Anthony Bourdain">
-                </a>
-                <div class="image-text">
-                    <span>Anthony Bourdain</span>
-                </div>
-            </div>
-        </section>
-        
-        <!--Div for the map marker-->
-        <section>
-          <div id="map"></div>  
-        </section> 
-      
+
+    <div class="flex justify-center">
+      <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+        <a href="./qui.html">
+          <img class="rounded-lg" src="./assets/images/placeholder.png" alt="Photo of Paul Qui">
+        </a>
+        <figcaption class="absolute w-full text-center bottom-6 px-4 text-lg text-white">
+            <p>Paul Qui</p>
+        </figcaption>
+      </figure>
+    </div>
+
+  </div>
+
 
 <footer>
-    <p>The Connoisseurs © 2020 Copyright</p>
+    <p class="bg-gray-300 pt-8 pb-8 m-3 text-l font-bold text-center">The Connoisseurs © 2022 Copyright</p>
 
 </footer>
 
-    <!-- SCRIPT TAILWIND -->
-    <!-- <script src="tailwind.config.js"></script> -->
     <!-- JAVASCRIPT -->
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/googleAPI.js"></script>
