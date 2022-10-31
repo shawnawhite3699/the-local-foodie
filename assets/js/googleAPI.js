@@ -41,6 +41,8 @@ function getGeocode (btnAttribute) {
     });
 }
 
+
+
 rests.addEventListener('click', function(event) {
   var element = event.target;
 
@@ -49,7 +51,8 @@ rests.addEventListener('click', function(event) {
     var dataIndex = element.getAttribute('data-index');
     getGeocode(btnAttribute);
     //console.log("Horray!")
-    displayData(dataIndex)
+    displayData(dataIndex);
+    
   }
 })
 
@@ -140,5 +143,13 @@ function displayData(dataIndex){
   displayRating.innerText = "Rating: " + displayArray[number+2] + " " + star;
   displayPrice.innerText = "Price: " + displayArray[number+3];
   displayType.innerText = "Type: " + displayArray[number+4];
+
+  displayImg(number);
+}
+
+function displayImg (number) {
+  var imgName = `./assets/images/${displayArray[number].replace(/\s+/g, '')}.jpeg`;
+  //console.log(imgName)
+  document.getElementById('foodImg').src = imgName;
 
 }
