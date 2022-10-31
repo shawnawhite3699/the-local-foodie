@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
     <!-- META -->
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -9,65 +9,64 @@
     <!-- FONTAWESOME, GOOGLE FONTS SOURCES -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet'>
     <script src="https://cdn.tailwindcss.com"></script>
     <script id="places" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD54S-783HvI69wO9163BupKf4QjIyB5I&libraries=places"></script>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
     <!-- BROWSER TAB TITLE -->
     <title>The Local Foodie</title>
 </head>
 
 <body>
-  <header>
-    <h1 class="bg-gray-300 pb-4 pt-8 m-3 text-3xl font-bold text-center underline">
-      The Local Foodie
-    </h1>
-    <h2 class="bg-gray-300 pb-8 pt-4 m-3 text-lg font-bold text-center">
-      Find Austin's Best Celebrity Chef-Endorsed Restaurants
-    </h2>
-  </header>
- 
-  <div class="grid lg:grid-cols-3 gap-4">
-    <div class="flex justify-center">
-      <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
-        <a href="./franklin.html">
-          <img class="rounded-lg" src="./assets/images/placeholder.png" alt="Photo of Aaron Franklin">
-        </a>
-        <figcaption class="absolute w-full text-center bottom-6 px-4 text-lg text-white">
-            <p>Aaron Franklin</p>
-        </figcaption>
-      </figure>
+  <div class="web-container">
+    <header>
+      <div id='bg-header'><span class="text-9xl font-bold">The Local Foodie</span></div>
+      <h2 class="text-white pb-8 m-3 text-2xl text-center">
+        Find Austin's Best Celebrity Chef-Endorsed Restaurants
+      </h2>
+    </header>
+  
+    <div class="grid lg:grid-cols-3 gap-4">
+      <div class="flex justify-end">
+        <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+          <a href="./franklin.html">
+            <img class="rounded-lg" src="./assets/images/franklin.jpeg" alt="Photo of Aaron Franklin">
+          </a>
+          <figcaption class="absolute w-full text-center bottom-2 px-4 text-lg text-white">
+              <p>Aaron Franklin</p>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="flex justify-center">
+        <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+          <a href="./bourdain.html">
+            <img class="rounded-lg" src="./assets/images/bourdain.png" alt="Photo of Anthony Bourdain">
+          </a>
+          <figcaption class="absolute w-full text-center bottom-2 px-4 text-lg text-white">
+              <p>Anthony Bourdain</p>
+          </figcaption>
+        </figure>
+      </div>
+
+
+      <div class="flex justify-start">
+        <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+          <a href="./qui.html">
+            <img class="rounded-lg" src="./assets/images/qui.jpeg" alt="Photo of Paul Qui">
+          </a>
+          <figcaption class="absolute w-full text-center bottom-2 px-4 text-lg text-white">
+              <p>Paul Qui</p>
+          </figcaption>
+        </figure>
+      </div>
+
     </div>
 
-    <div class="flex justify-center">
-      <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
-        <a href="./bourdain.html">
-          <img class="rounded-lg" src="./assets/images/placeholder.png" alt="Photo of Anthony Bourdain">
-        </a>
-        <figcaption class="absolute w-full text-center bottom-6 px-4 text-lg text-white">
-            <p>Anthony Bourdain</p>
-        </figcaption>
-      </figure>
-    </div>
-
-
-    <div class="flex justify-center">
-      <figure class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
-        <a href="./qui.html">
-          <img class="rounded-lg" src="./assets/images/placeholder.png" alt="Photo of Paul Qui">
-        </a>
-        <figcaption class="absolute w-full text-center bottom-6 px-4 text-lg text-white">
-            <p>Paul Qui</p>
-        </figcaption>
-      </figure>
-    </div>
-
-  </div>
-
-
-<footer>
-    <p class="bg-gray-300 pt-8 pb-8 m-3 text-l font-bold text-center">The Connoisseurs © 2022 Copyright</p>
-
-</footer>
+    <footer>
+      <div id='bg-footer'><span class="text-l font-bold">The Connoisseurs © 2022 Copyright</span></div>
+    </footer>
+  </div> 
 
     <!-- JAVASCRIPT -->
     <script src="./assets/js/script.js"></script>
