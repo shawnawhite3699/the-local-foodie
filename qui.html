@@ -14,8 +14,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/style.css"/>
+    <script id="places" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD54S-783HvI69wO9163BupKf4QjIyB5I&libraries=places"></script>
     <!-- BROWSER TAB TITLE -->
-    <title>Qui Austin Recs</title>
+    <title id="chef-name" data-chef="2">Qui Austin Recs</title>
 </head>
 
 <body>
@@ -32,33 +33,33 @@
             <ul id="rests">
                 <li class="profile mt-4"><img class="rounded" src="./assets/images/placeholder1.png" alt=""></li>
                 <li><imgcaption>Paul Qui</imgcaption></li>
-                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="8624766P%2BXX">
+                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="8624766P%2BXX" data-index="0">
                     Juiceland</button></li>
-                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="86247759%2BW8">
+                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="86247759%2BW8" data-index="1">
                     Las Trancas</button></li>
-                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="8624777H%2B2H">
+                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="8624777H%2B2H" data-index="2">
                     Salt & Time</button></li>
-                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="862476CX%2B62">
+                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="862476CX%2B62" data-index="3">
                     Qui Patio</button></li>
-                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="862477X3%2B54">
+                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="862477X3%2B54" data-index="4">
                     Musashino</button></li>
-                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="8624776G%2BX2">
+                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="8624776G%2BX2" data-index="5">
                     East Side King</button></li>
-                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="8624773X%2B8Q">
+                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="8624773X%2B8Q" data-index="6">
                     Justine's</button></li>
-                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="862477C9%2B2F">
+                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="862477C9%2B2F" data-index="7">
                     Franklin BBQ</button></li>
-                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="86247792%2B67">
+                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="86247792%2B67" data-index="8">
                     Juan Pelota Cafe</button></li>
             </ul>
 
             <section class="col-start-4 col-end-6 mt-6 leading-loose">
                 <ul>
-                    <li>Name:</li>
-                    <li>Address:</li>
-                    <li>Price:</li>
-                    <li>Rating:</li>
-                    <li>Cuisine:</li>
+                    <li id="restaurantName"></li>
+                    <li id="restaurantAddress"></li>
+                    <li id="restaurantRating"></li>
+                    <li id="restaurantPrice"></li>
+                    <li id="restaurantType"></li>
                     <li><img class="rounded" src="./assets/images/placeholder1.png" alt=""></li>
                 </ul>
             </section>
@@ -67,6 +68,8 @@
                 <!--Div for the map marker-->
                 <div id="map"></div>
             </section>
+
+    
 
         </main>
 
@@ -77,6 +80,8 @@
     <!-- JAVASCRIPT -->
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/googleAPI.js"></script>
+    <!-- 
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVM4nCzUY3gFGHGXhyDnzXz8ZZbcT0e1w&callback=initMap"></script>
+    -->
 </body>
 </html>
