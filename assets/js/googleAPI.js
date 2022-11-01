@@ -1,7 +1,8 @@
-//'rests' is a placeholder. Will need restaurants in a specific div with id
+//Variable to link restaurant buttons to a single event listener
 var rests = document.getElementById('rests');
 //console.log(rests);
 
+//Map function
 function initMap(userLat, userLon) {
     // Lat and lon of restaurant pulled from getGeocode fx
     const local = { lat: userLat, lng: userLon};
@@ -15,15 +16,14 @@ function initMap(userLat, userLon) {
       position: local,
       map: map,
     });
-  }
-  
+}
+
+//Initializes map
 window.initMap = initMap;
 
+//Function that takes Google Plus Code attached as a button ID and brings back lat and long for location then feeds into the initMap fx
 function getGeocode (btnAttribute) {
-  //Line below will be used once buttons are coded in. Line two below is a placeholder for design layout
   var geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${btnAttribute}&key=AIzaSyDVM4nCzUY3gFGHGXhyDnzXz8ZZbcT0e1w`;
-  //var geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=862487R6%2BGM&key=AIzaSyDVM4nCzUY3gFGHGXhyDnzXz8ZZbcT0e1w`;
-
 
   fetch(geocodeUrl)
     .then(function (response) {
@@ -35,14 +35,13 @@ function getGeocode (btnAttribute) {
       // console.log(data.results[0].geometry.location.lng);
       userLat = data.results[0].geometry.location.lat;
       userLon = data.results[0].geometry.location.lng;
-      console.log(userLat);
-      console.log(userLon);
+      //console.log(userLat);
+      //console.log(userLon);
       initMap(userLat, userLon)
     });
 }
 
-
-
+//Event listener for all buttons
 rests.addEventListener('click', function(event) {
   var element = event.target;
 
@@ -51,8 +50,7 @@ rests.addEventListener('click', function(event) {
     var dataIndex = element.getAttribute('data-index');
     getGeocode(btnAttribute);
     //console.log("Horray!")
-    displayData(dataIndex);
-    
+    displayData(dataIndex); 
   }
 })
 
@@ -147,7 +145,9 @@ function displayData(dataIndex){
   displayImg(number);
 }
 
+//Function that displays the image of food based off of restaurant name
 function displayImg (number) {
+  //Variable for path name of image that takes in Google Place API restaurant name, removes all spaces, and attaches a .jpeg to end
   var imgName = `./assets/images/${displayArray[number].replace(/\s+/g, '')}.jpeg`;
   //console.log(imgName)
   document.getElementById('foodImg').src = imgName;
