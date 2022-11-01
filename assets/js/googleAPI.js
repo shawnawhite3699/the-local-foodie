@@ -73,9 +73,9 @@ var chefNameIndex = document.getElementById("chef-name");
 var chefIndex = chefNameIndex.getAttribute('data-chef');
 var chefRecommend =
 [
-aaronFranklin = ["Veracruz All Natural","Launderette","Lenoir","Suerte","ElDorado Cafe","Franklin Barbecue","Loro","Uchi","Uchiko"],
-anthonyBourdain = ["Barley Swine","Franklin Barbecue","Tacos Ricos","Draught House Pub & Brewery","El Azteca Restaurant","Lala's Little Nugget","Joe's Bakery & Coffee Shop","Texas Chili Parlor"],
-paulQui = ["Las Trancas Taco Stand","Salt & Time","Qi Austin: Modern Asain Kitchen","Musashino Sushi Dokoro","East Side King","Justine's","Franklin Barbecue","Juan Pelota Cafe"],
+aaronFranklin = ["Veracruz All Natural","Launderette","Lenoir","Suerte","ElDorado Cafe","Franklin Barbecue","Loro","Uchiko"],
+anthonyBourdain = ["Barley Swine","Franklin Barbecue","Draught House Pub & Brewery","Lala's Little Nugget","Joe's Bakery & Coffee Shop","Texas Chili Parlor"],
+paulQui = ["Juiceland","Las Trancas Taco Stand","Salt & Time","Qi Austin: Modern Asain Kitchen","Musashino Sushi Dokoro","Justine's","Franklin Barbecue","Juan Pelota Cafe"],
 ];
 var restaurantInfo = 
 { 
@@ -85,19 +85,20 @@ var restaurantInfo =
   price_level: "",
   type: "",
 }; 
+var star = "⭐⭐⭐⭐☆"
+chefName = celebrityChef[chefIndex];
+restaurantName = chefRecommend[chefIndex];
 
-
-if (chefIndex !== ""){
-  chefName = celebrityChef[chefIndex];
-  restaurantName = chefRecommend[chefIndex];
+if (chefIndex !== "" && localStorage.key(chefIndex) !== celebrityChef[chefIndex]){
   queryData(restaurantName,chefName);
 }
 
 //Google Place Search API function
 function queryData (restaurantName,chefName){
-
+  tempArray = [];
+  finalArray = [];
   var austin = new google.maps.LatLng(30.26477, -97.75025);
-
+  console.log(restaurantName);
   for (var i=0;i<restaurantName.length;i++){
 
     const request = {
@@ -106,9 +107,8 @@ function queryData (restaurantName,chefName){
       locationBias: austin,
     };
 
-     var callback = (response, status) => {
+     const callback = (response, status) => {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
-
         //save data from query to an defined local object
           restaurantInfo.name = response[0].name;
           restaurantInfo.address = response[0].formatted_address;
@@ -119,7 +119,9 @@ function queryData (restaurantName,chefName){
           //convert data from object to string and save to the local storage
           tempArray = Object.values(restaurantInfo);
           finalArray = finalArray.concat(tempArray);
+          console.log(finalArray);
           localStorage.setItem(chefName, JSON.stringify(finalArray));
+
         }
       }
     //place search API
@@ -138,7 +140,7 @@ function displayData(dataIndex){
 
   displayName.innerText = "Name: " + displayArray[number];
   displayAddress.innerText = "Address: " + displayArray[number+1];
-  displayRating.innerText = "Rating: " + displayArray[number+2];
+  displayRating.innerText = "Rating: " + displayArray[number+2] + " " + star;
   displayPrice.innerText = "Price: " + displayArray[number+3];
   displayType.innerText = "Type: " + displayArray[number+4];
 
