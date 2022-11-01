@@ -1,5 +1,5 @@
 # The Local Foodie
-The Local Foodie is a Austin-based restaurant locator app that allows onlookers to view various restaurants that several famous chefs prefer. You can also see the reviews for every restaurant that was recommended by these celebrity chefs. These featured celebrity chefs include Aaron Franklin, Paul Qui, and Anthony Bourdain. If you want, you can also leave a review yourself to help others decide where to eat! This was a project made with HTML, CSS, and Javascript. We used two API's and made them coincide with each other.
+The Local Foodie is a Austin-based restaurant locator app that allows onlookers to view various restaurants that several famous chefs prefer. You can also see the reviews for every restaurant that were recommended by these celebrity chefs. These featured celebrity chefs include Aaron Franklin, Paul Qui, and Anthony Bourdain. If you want, you can also leave a review yourself to help others decide where to eat! This was a project made with HTML, CSS, and Javascript. We used two API's and made them coincide with each other.
 
 ## Project 1 Overview/Requirements
 You and your group will use everything you’ve learned over the past six modules to create a real-world front-end application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
@@ -31,18 +31,15 @@ AS a foodie
 I WANT to see restaurants celebrity chefs have recommended in the Austin area
 SO THAT I can see their reviews, visit the restaurant, and leave my own reviews
 ```
-## Acceptance Criteria
 
-```
-GIVEN a restaurant 
-```
 ## Screenshot
 
-## Tech Used
+
+## Technologies Used
 * HTML
 * CSS
 * Javascript
-* Google Places API
+* Google Place Search API
 * Googles Maps API
 
 ## Contributors
@@ -51,7 +48,7 @@ GIVEN a restaurant
 * [James Carter](https://github.com/carterjamesmike)
 * [Ye Kuang](https://github.com/ykuang321)
 * [Jeremy Koshy](https://github.com/jbkoshy)
-* [Nima Moeini](
+* [Nima Moeini](https://github.com/nickthepriest76)
 
 ## Deployed Application
-[Launch The Local Foodie]
+[Launch The Local Foodie]()
