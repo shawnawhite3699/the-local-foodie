@@ -33,6 +33,7 @@ SO THAT I can see their reviews, visit the restaurant, and leave my own reviews
 ```
 
 ## Screenshot
+<img width="1294" alt="CE762F8B-FB4E-495A-B0DB-B483E774F2AC" src="https://user-images.githubusercontent.com/112911066/199359683-de21c03d-ce48-4bce-ba52-c7740cde72b6.png">
 
 
 ## Technologies Used
@@ -52,4 +53,4 @@ SO THAT I can see their reviews, visit the restaurant, and leave my own reviews
 * [Nima Moeini](https://github.com/nickthepriest76)
 
 ## Deployed Application
-[Launch The Local Foodie]()
+[Launch The Local Foodie](https://shawnawhite3699.github.io/the-local-foodie/)
