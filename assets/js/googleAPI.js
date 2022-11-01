@@ -41,16 +41,14 @@ function getGeocode (btnAttribute) {
     });
 }
 
-//Event listener for all buttons
 rests.addEventListener('click', function(event) {
   var element = event.target;
 
   if (element.matches('button') === true) {
     var btnAttribute = element.getAttribute('id');
-    var dataIndex = element.getAttribute('data-index');
+    var restaurantName = element.getAttribute('data-restaurant');
     getGeocode(btnAttribute);
-    //console.log("Horray!")
-    displayData(dataIndex); 
+    checkLocalStorage(restaurantName)
   }
 })
 
@@ -59,22 +57,12 @@ rests.addEventListener('click', function(event) {
 // ##################### Google Place Search API #####################
 var restaurantName =[];
 var celebrityChef = ["Aaron Franklin","Anthony Bourdain","Paul Qui"];
-var chefName ="";
-var tempArray = [];
 var finalArray =[];
 const displayName = document.getElementById("restaurantName");
 const displayAddress = document.getElementById("restaurantAddress");
 const displayRating = document.getElementById("restaurantRating");
 const displayPrice = document.getElementById("restaurantPrice");
 const displayType = document.getElementById("restaurantType");
-var chefNameIndex = document.getElementById("chef-name");
-var chefIndex = chefNameIndex.getAttribute('data-chef');
-var chefRecommend =
-[
-aaronFranklin = ["Veracruz All Natural","Launderette","Lenoir","Suerte","ElDorado Cafe","Franklin Barbecue","Loro","Uchiko"],
-anthonyBourdain = ["Barley Swine","Franklin Barbecue","Draught House Pub & Brewery","Lala's Little Nugget","Joe's Bakery & Coffee Shop","Texas Chili Parlor"],
-paulQui = ["Juiceland","Las Trancas Taco Stand","Salt & Time","Qi Austin: Modern Asain Kitchen","Musashino Sushi Dokoro","Justine's","Franklin Barbecue","Juan Pelota Cafe"],
-];
 var restaurantInfo = 
 { 
   name: "",
@@ -84,72 +72,84 @@ var restaurantInfo =
   type: "",
 }; 
 var star = "⭐⭐⭐⭐☆"
-chefName = celebrityChef[chefIndex];
-restaurantName = chefRecommend[chefIndex];
 
-if (chefIndex !== "" && localStorage.key(chefIndex) !== celebrityChef[chefIndex]){
-  queryData(restaurantName,chefName);
+//check local storage before send out a query
+function checkLocalStorage(restaurantName){
+
+  if (localStorage.length > 0){
+    for (var i=0;i<localStorage.length;i++){
+      if (restaurantName === localStorage.key(i)){
+          displayData(restaurantName)
+          console.log("hello");
+      }
+      else{
+        queryData(restaurantName);
+      }
+    }
+  }
+  else{
+    queryData(restaurantName);
+  }
+
 }
 
 //Google Place Search API function
-function queryData (restaurantName,chefName){
-  tempArray = [];
+function queryData (restaurantName){
+
   finalArray = [];
   var austin = new google.maps.LatLng(30.26477, -97.75025);
-  console.log(restaurantName);
-  for (var i=0;i<restaurantName.length;i++){
 
-    const request = {
-      query: restaurantName[i],
-      fields: ["name","formatted_address","rating","price_level","type"],
-      locationBias: austin,
-    };
-
-     const callback = (response, status) => {
-      if (status == google.maps.places.PlacesServiceStatus.OK) {
-        //save data from query to an defined local object
-          restaurantInfo.name = response[0].name;
-          restaurantInfo.address = response[0].formatted_address;
-          restaurantInfo.rating = response[0].rating;
-          restaurantInfo.price_level = response[0].price_level;
-          restaurantInfo.type = response[0].types[0];
-
-          //convert data from object to string and save to the local storage
-          tempArray = Object.values(restaurantInfo);
-          finalArray = finalArray.concat(tempArray);
-          console.log(finalArray);
-          localStorage.setItem(chefName, JSON.stringify(finalArray));
-
-        }
-      }
-    //place search API
-    const places = document.getElementById('places');
-    var service = new google.maps.places.PlacesService(places);
-    service.findPlaceFromQuery(request,callback);
+  //request parameter
+  const request = {
+    query: restaurantName,
+    fields: ["name","formatted_address","rating","price_level","type"],
+    locationBias: austin,
   }
+    
+  //call back function
+  const callback = (response, status) => {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+
+      //save data from query to an defined local object
+      restaurantInfo.name = response[0].name;
+      restaurantInfo.address = response[0].formatted_address;
+      restaurantInfo.rating = response[0].rating;
+      restaurantInfo.price_level = response[0].price_level;
+      restaurantInfo.type = response[0].types[0];
+
+      //convert data from object to string and save to the local storage
+      finalArray = Object.values(restaurantInfo);
+      localStorage.setItem(restaurantName, JSON.stringify(finalArray));
+      displayData(restaurantName);
+      }
+    }
+
+  //place search API
+  const places = document.getElementById('places');
+  var service = new google.maps.places.PlacesService(places);
+  service.findPlaceFromQuery(request,callback);
+
 }
 
 //Display Data Function
-function displayData(dataIndex){
+function displayData(restaurantName){
 
-  displayArray =[];
-  var number = dataIndex*5;
-  displayArray = JSON.parse(localStorage.getItem(chefName));
+  displayArray = JSON.parse(localStorage.getItem(restaurantName));
 
-  displayName.innerText = "Name: " + displayArray[number];
-  displayAddress.innerText = "Address: " + displayArray[number+1];
-  displayRating.innerText = "Rating: " + displayArray[number+2] + " " + star;
-  displayPrice.innerText = "Price: " + displayArray[number+3];
-  displayType.innerText = "Type: " + displayArray[number+4];
+  displayName.innerText = "Name: " + displayArray[0];
+  displayAddress.innerText = "Address: " + displayArray[1];
+  displayRating.innerText = "Rating: " + displayArray[2] + " " + star;
+  displayPrice.innerText = "Price: " + displayArray[3];
+  displayType.innerText = "Type: " + displayArray[4];
 
-  displayImg(number);
+  displayImg(restaurantName);
 }
 
-//Function that displays the image of food based off of restaurant name
-function displayImg (number) {
-  //Variable for path name of image that takes in Google Place API restaurant name, removes all spaces, and attaches a .jpeg to end
-  var imgName = `./assets/images/${displayArray[number].replace(/\s+/g, '')}.jpeg`;
-  //console.log(imgName)
+//display image 
+function displayImg (restaurantName) {
+  //var imgName = `./assets/images/${displayArray[restaurantName].replace(/\s+/g, '')}.jpeg`;
+  var imgName = "./assets/images/" + restaurantName + ".jpeg";
   document.getElementById('foodImg').src = imgName;
-
 }
+
+
