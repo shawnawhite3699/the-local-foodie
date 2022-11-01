@@ -30,20 +30,16 @@ function getGeocode (btnAttribute) {
       return response.json();
     })
     .then(function (data) {
-      //console.log(data);
-      // console.log(data.results[0].geometry.location.lat);
-      // console.log(data.results[0].geometry.location.lng);
       userLat = data.results[0].geometry.location.lat;
       userLon = data.results[0].geometry.location.lng;
-      //console.log(userLat);
-      //console.log(userLon);
       initMap(userLat, userLon)
-
+      //Saves user lat and lon into local storage
       var savedLatLon = [userLat, userLon];
       localStorage.setItem("savedLatLon", JSON.stringify(savedLatLon));   
     });
 }
 
+//Event listener for buttons
 rests.addEventListener('click', function(event) {
   var element = event.target;
 
@@ -55,8 +51,6 @@ rests.addEventListener('click', function(event) {
   }
 })
 
-
-
 // ##################### Google Place Search API #####################
 var restaurantName =[];
 var celebrityChef = ["Aaron Franklin","Anthony Bourdain","Paul Qui"];
@@ -66,6 +60,7 @@ const displayAddress = document.getElementById("restaurantAddress");
 const displayRating = document.getElementById("restaurantRating");
 const displayPrice = document.getElementById("restaurantPrice");
 const displayType = document.getElementById("restaurantType");
+var dollarSymbol = "";
 var restaurantInfo = 
 { 
   name: "",
@@ -74,26 +69,29 @@ var restaurantInfo =
   price_level: "",
   type: "",
 }; 
-var star = "⭐⭐⭐⭐☆"
 
 //check local storage before send out a query
 function checkLocalStorage(restaurantName){
 
   if (localStorage.length > 0){
-    for (var i=0;i<localStorage.length;i++){
-      if (restaurantName === localStorage.key(i)){
-          displayData(restaurantName)
-          console.log("hello");
+
+    for (var restaurantIndex = 0; restaurantIndex < localStorage.length; restaurantIndex++){
+
+      if (restaurantName === localStorage.key(restaurantIndex)){
+        displayData(restaurantName);
       }
-      else{
+
+      else if (restaurantIndex >= localStorage.length-1){
         queryData(restaurantName);
       }
-    }
+
+      else {
+      }
+    }    
   }
   else{
     queryData(restaurantName);
   }
-
 }
 
 //Google Place Search API function
@@ -125,70 +123,85 @@ function queryData (restaurantName){
       
       localStorage.setItem(restaurantName, JSON.stringify(finalArray));
 
-  var savedArray = [];
-  savedArray = Object.values(restaurantInfo);
-  localStorage.setItem('savedArray', JSON.stringify(savedArray));
+      //Stores restaurant data into a rewritable array on local storage to be displayed upon page refresh   
+      var savedArray = [];
+      savedArray = Object.values(restaurantInfo);
+      localStorage.setItem('savedArray', JSON.stringify(savedArray));
 
-  //console.log(storedData)
 
       displayData(restaurantName);
       }
     }
 
-  //place search API
+  //place search API call
   const places = document.getElementById('places');
   var service = new google.maps.places.PlacesService(places);
   service.findPlaceFromQuery(request,callback);
-
 }
 
 //Display Data Function
 function displayData(restaurantName){
 
+  var star = "⭐⭐⭐⭐☆";
+
+  //get data from local storage
   displayArray = JSON.parse(localStorage.getItem(restaurantName));
+
+  var priceLevel = displayArray[3];
+  dollarSign(priceLevel);
 
   displayName.innerText = "Name: " + displayArray[0];
   displayAddress.innerText = "Address: " + displayArray[1];
   displayRating.innerText = "Rating: " + displayArray[2] + " " + star;
-  displayPrice.innerText = "Price: " + displayArray[3];
+  displayPrice.innerText = "Price: " + displayArray[3] + " " + dollarSymbol;
   displayType.innerText = "Type: " + displayArray[4];
 
 
   displayImg(restaurantName);
-  //renderSavedData(displayArray);
+
 
 
 }
 
-//display image 
+//display image function
 function displayImg (restaurantName) {
-  //var imgName = `./assets/images/${displayArray[restaurantName].replace(/\s+/g, '')}.jpeg`;
   var imgName = "./assets/images/" + restaurantName + ".jpeg";
   document.getElementById('foodImg').src = imgName;
 }
 
-
+//Displays most recent restaurant data on page after refresh
 function renderSavedData () {
   var storedData = JSON.parse(localStorage.getItem("savedArray"));
- 
+  var star = "⭐⭐⭐⭐☆";
+  var priceLevel = storedData[3];
+  dollarSign(priceLevel);
+
   displayName.innerText = "Name: " + storedData[0];
   displayAddress.innerText = "Address: " + storedData[1];
   displayRating.innerText = "Rating: " + storedData[2] + " " + star;
-  displayPrice.innerText = "Price: " + storedData[3];
+  displayPrice.innerText = "Price: " + storedData[3] + " " + dollarSymbol;
   displayType.innerText = "Type: " + storedData[4];
 
   var storedImg = "./assets/images/" + storedData[0] + ".jpeg";
   document.getElementById('foodImg').src = storedImg;
 
   var storedLatLon = JSON.parse(localStorage.getItem("savedLatLon"));
-  //console.log(storedLatLon)
-
-   userLat = storedLatLon[0];
-   userLon = storedLatLon[1];
-
-   initMap(userLat, userLon);
+  userLat = storedLatLon[0];
+  userLon = storedLatLon[1];
   
-
-
+  initMap(userLat, userLon);
 }
+
+//Renders most recent search
 renderSavedData();
+
+//dollar sign function
+function dollarSign(priceLevel){
+ 
+  dollarSymbol = "";
+  priceSymbol = "$";
+  for (var i=0; i<priceLevel; i++){
+    dollarSymbol = dollarSymbol + priceSymbol;
+    
+  }
+}
