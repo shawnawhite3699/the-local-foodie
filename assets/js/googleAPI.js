@@ -1,7 +1,8 @@
-//'rests' is a placeholder. Will need restaurants in a specific div with id
+//Variable to link restaurant buttons to a single event listener
 var rests = document.getElementById('rests');
 //console.log(rests);
 
+//Map function
 function initMap(userLat, userLon) {
     // Lat and lon of restaurant pulled from getGeocode fx
     const local = { lat: userLat, lng: userLon};
@@ -15,14 +16,14 @@ function initMap(userLat, userLon) {
       position: local,
       map: map,
     });
-  }
-  
+}
+
+//Initializes map
 window.initMap = initMap;
 
+//Function that takes Google Plus Code attached as a button ID and brings back lat and long for location then feeds into the initMap fx
 function getGeocode (btnAttribute) {
-  //Line below will be used once buttons are coded in. Line two below is a placeholder for design layout
   var geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${btnAttribute}&key=AIzaSyDVM4nCzUY3gFGHGXhyDnzXz8ZZbcT0e1w`;
-  //var geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=862487R6%2BGM&key=AIzaSyDVM4nCzUY3gFGHGXhyDnzXz8ZZbcT0e1w`;
 
   fetch(geocodeUrl)
     .then(function (response) {
@@ -32,9 +33,13 @@ function getGeocode (btnAttribute) {
       userLat = data.results[0].geometry.location.lat;
       userLon = data.results[0].geometry.location.lng;
       initMap(userLat, userLon)
+      //Saves user lat and lon into local storage
+      var savedLatLon = [userLat, userLon];
+      localStorage.setItem("savedLatLon", JSON.stringify(savedLatLon));   
     });
 }
 
+//Event listener for buttons
 rests.addEventListener('click', function(event) {
   var element = event.target;
 
@@ -115,7 +120,15 @@ function queryData (restaurantName){
 
       //convert data from object to string and save to the local storage
       finalArray = Object.values(restaurantInfo);
+      
       localStorage.setItem(restaurantName, JSON.stringify(finalArray));
+
+      //Stores restaurant data into a rewritable array on local storage to be displayed upon page refresh   
+      var savedArray = [];
+      savedArray = Object.values(restaurantInfo);
+      localStorage.setItem('savedArray', JSON.stringify(savedArray));
+
+
       displayData(restaurantName);
       }
     }
@@ -143,7 +156,11 @@ function displayData(restaurantName){
   displayPrice.innerText = "Price: " + displayArray[3] + " " + dollarSymbol;
   displayType.innerText = "Type: " + displayArray[4];
 
+
   displayImg(restaurantName);
+
+
+
 }
 
 //display image function
@@ -152,6 +169,32 @@ function displayImg (restaurantName) {
   document.getElementById('foodImg').src = imgName;
 }
 
+//Displays most recent restaurant data on page after refresh
+function renderSavedData () {
+  var storedData = JSON.parse(localStorage.getItem("savedArray"));
+  var star = "⭐⭐⭐⭐☆";
+  var priceLevel = storedData[3];
+  dollarSign(priceLevel);
+
+  displayName.innerText = "Name: " + storedData[0];
+  displayAddress.innerText = "Address: " + storedData[1];
+  displayRating.innerText = "Rating: " + storedData[2] + " " + star;
+  displayPrice.innerText = "Price: " + storedData[3] + " " + dollarSymbol;
+  displayType.innerText = "Type: " + storedData[4];
+
+  var storedImg = "./assets/images/" + storedData[0] + ".jpeg";
+  document.getElementById('foodImg').src = storedImg;
+
+  var storedLatLon = JSON.parse(localStorage.getItem("savedLatLon"));
+  userLat = storedLatLon[0];
+  userLon = storedLatLon[1];
+  
+  initMap(userLat, userLon);
+}
+
+//Renders most recent search
+renderSavedData();
+
 //dollar sign function
 function dollarSign(priceLevel){
  
@@ -159,5 +202,6 @@ function dollarSign(priceLevel){
   priceSymbol = "$";
   for (var i=0; i<priceLevel; i++){
     dollarSymbol = dollarSymbol + priceSymbol;
+    
   }
 }
