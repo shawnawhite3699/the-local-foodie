@@ -41,6 +41,7 @@ SO THAT I can see their reviews, visit the restaurant, and leave my own reviews
 * Javascript
 * Google Place Search API
 * Googles Maps API
+* Google Geocoding API
 
 ## Contributors
 * [Shawna White](https://github.com/shawnawhite3699)
