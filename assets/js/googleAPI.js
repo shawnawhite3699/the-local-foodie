@@ -38,6 +38,9 @@ function getGeocode (btnAttribute) {
       //console.log(userLat);
       //console.log(userLon);
       initMap(userLat, userLon)
+
+      var savedLatLon = [userLat, userLon];
+      localStorage.setItem("savedLatLon", JSON.stringify(savedLatLon));   
     });
 }
 
@@ -119,7 +122,15 @@ function queryData (restaurantName){
 
       //convert data from object to string and save to the local storage
       finalArray = Object.values(restaurantInfo);
+      
       localStorage.setItem(restaurantName, JSON.stringify(finalArray));
+
+  var savedArray = [];
+  savedArray = Object.values(restaurantInfo);
+  localStorage.setItem('savedArray', JSON.stringify(savedArray));
+
+  //console.log(storedData)
+
       displayData(restaurantName);
       }
     }
@@ -142,7 +153,11 @@ function displayData(restaurantName){
   displayPrice.innerText = "Price: " + displayArray[3];
   displayType.innerText = "Type: " + displayArray[4];
 
+
   displayImg(restaurantName);
+  //renderSavedData(displayArray);
+
+
 }
 
 //display image 
@@ -153,3 +168,27 @@ function displayImg (restaurantName) {
 }
 
 
+function renderSavedData () {
+  var storedData = JSON.parse(localStorage.getItem("savedArray"));
+ 
+  displayName.innerText = "Name: " + storedData[0];
+  displayAddress.innerText = "Address: " + storedData[1];
+  displayRating.innerText = "Rating: " + storedData[2] + " " + star;
+  displayPrice.innerText = "Price: " + storedData[3];
+  displayType.innerText = "Type: " + storedData[4];
+
+  var storedImg = "./assets/images/" + storedData[0] + ".jpeg";
+  document.getElementById('foodImg').src = storedImg;
+
+  var storedLatLon = JSON.parse(localStorage.getItem("savedLatLon"));
+  //console.log(storedLatLon)
+
+   userLat = storedLatLon[0];
+   userLon = storedLatLon[1];
+
+   initMap(userLat, userLon);
+  
+
+
+}
+renderSavedData();
