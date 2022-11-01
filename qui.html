@@ -9,7 +9,7 @@
     <!-- FONTAWESOME, GOOGLE FONTS SOURCES -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet'>
     <!-- LINK TAILWIND SOURCE -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- CSS -->
@@ -22,25 +22,24 @@
 <body>
     <div  class="web-container">
         <header>
-            <h1 class="bg-black text-white pb-0 pt-6 text-7xl text-center">
-                The Local Foodie
-            </h1>
-            <h2 class="bg-black text-white pb-8 pt-6 text-4xl text-center">Find Austin's Best Celebrity Chef-Endorsed Restaurants</h2>
+            <div id='chef-header'><span class="text-7xl font-bold">Paul Qui</span></div>
         </header>
         <!-- 3 COLUMNS / IMAGE / LIST OF RECS / DISPLAY APIS -->
 
         <main class="grid grid-cols-12 col-span-3 px-8">
             <ul id="rests">
-                <li class="profile mt-4"><img class="rounded" src="./assets/images/qui.jpeg" alt="Photo of Paul Qui"></li>
-                <li class="w-64 text-white"><imgcaption>Paul Qui</imgcaption></li>
+                <li class="profile mt-4"><img class="rounded border" src="./assets/images/qui.jpeg" alt="Photo of Paul Qui"></li>
+                <li class="w-64 text-white text-center">
+                    <p>Paul Qui is a Texas-based Top Chef winner and James Beard award recipient.
+                    In 2011, he won the ninth season of reality television cooking competition Top Chef.
+                    </p>
+                </li>
                 <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 mt-6 mb-3 mr-3 ml-0 w-64 rounded" id="8624766P%2BXX" data-restaurant="Juiceland">
                     Juiceland</button></li>
                 <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded" id="86247759%2BW8" data-restaurant="Las Trancas">
                     Las Trancas</button></li>
                 <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded" id="8624777H%2B2H" data-restaurant="Salt & Time">
                     Salt & Time</button></li>
-                <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded" id="862476CX%2B62" data-restaurant="Qi Austin Modern Asain Kitchen">
-                    Qi Austin: Modern Asain Kitchen</button></li>
                 <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded" id="862477X3%2B54" data-restaurant="Musashino Sushi Dokoro">
                     Musashino Sushi Dokoro</button></li>
                 <li><button class="bg-gray-600 hover:bg-black text-white font-bold py-2 m-3 ml-0 w-64 rounded" id="8624773X%2B8Q" data-restaurant="Justine's">
@@ -70,7 +69,7 @@
         </main>
 
         <footer class="col-span-3">
-            <p class="bg-black text-white p-8 text-l font-bold text-center">The Connoisseurs © 2022 Copyright</p>
+            <div id='chef-footer'><span class="text-l font-bold">The Connoisseurs © 2022</span></div>
         </footer>
     </div>
     <!-- JAVASCRIPT -->
